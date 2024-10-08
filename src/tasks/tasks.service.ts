@@ -44,6 +44,10 @@ export class TasksService {
     return task;
   }
 
+  async deleteTaskById(taskId: string): Promise<void>{
+    await this.taskModel.findByIdAndDelete(taskId);
+  }
+
   async getTaskResultsById(taskId: string): Promise<TaskResponse[]> {
     const tasks = await this.taskModel.find().exec();
     const taskResult = await this.taskResponseModel.find().exec();

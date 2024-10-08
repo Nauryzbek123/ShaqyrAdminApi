@@ -27,6 +27,12 @@ export class Task extends Document {
     },
   ])
   slots: Record<string, any>[];
+
+  @Prop([String]) 
+  photos: string[];
+
+  @Prop([String]) 
+  videos: string[];
 }
 
 export const TaskSchema = SchemaFactory.createForClass(Task);
